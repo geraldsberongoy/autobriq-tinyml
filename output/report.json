@@ -1,0 +1,101 @@
+{
+  "classes": [
+    "good",
+    "cracked",
+    "under_carbonized"
+  ],
+  "dataset": {
+    "train": 630,
+    "val": 135,
+    "test": 135,
+    "per_class_total": [
+      300,
+      300,
+      300
+    ]
+  },
+  "model": {
+    "params": 73283,
+    "macs_per_inference": 10889472,
+    "int8_tflite_bytes": 114456,
+    "float_tflite_bytes": 292620,
+    "est_peak_activation_bytes": 111232,
+    "recommended_tensor_arena_bytes": 222464
+  },
+  "input_quantization": {
+    "scale": 1.0,
+    "zero_point": -128
+  },
+  "val_accuracy": {
+    "before_bn_recalibration": 0.9111,
+    "after_bn_recalibration": 0.9852
+  },
+  "test_accuracy": {
+    "float32": 0.9704,
+    "int8": 0.963
+  },
+  "per_class": {
+    "good": {
+      "precision": 0.9167,
+      "recall": 0.9778,
+      "f1-score": 0.9462,
+      "support": 45.0
+    },
+    "cracked": {
+      "precision": 0.9762,
+      "recall": 0.9111,
+      "f1-score": 0.9425,
+      "support": 45.0
+    },
+    "under_carbonized": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 45.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      44,
+      1,
+      0
+    ],
+    [
+      4,
+      41,
+      0
+    ],
+    [
+      0,
+      0,
+      45
+    ]
+  ],
+  "misclassified": [
+    {
+      "file": "data/cracked/placeholder_0094.jpg",
+      "actual": "cracked",
+      "predicted": "good"
+    },
+    {
+      "file": "data/cracked/placeholder_0157.jpg",
+      "actual": "cracked",
+      "predicted": "good"
+    },
+    {
+      "file": "data/good/placeholder_0241.jpg",
+      "actual": "good",
+      "predicted": "cracked"
+    },
+    {
+      "file": "data/cracked/placeholder_0026.jpg",
+      "actual": "cracked",
+      "predicted": "good"
+    },
+    {
+      "file": "data/cracked/placeholder_0098.jpg",
+      "actual": "cracked",
+      "predicted": "good"
+    }
+  ]
+}
